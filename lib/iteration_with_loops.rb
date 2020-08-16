@@ -1,20 +1,21 @@
-require 'pry'
-
 def find_min_in_nested_arrays(src)
-results = []
-row_index = 0 
-while row_index < src.count do
-  element_index = 0 
-  while element_index < src[row_index].count do
-    if src[row_index][element_index] < src[row_index][element_index]
-      results << src[row_index][element_index]
+  outer_results = []
+  row_index = 0 
+  while row_index < src.count do
+    element_index = 0 
+    inner_results = []
+    lowest_value = 100
+    while element_index < src[row_index].count do
+      if src[row_index][element_index] < lowest_value
+        lowest_value = src[row_index][element_index]
+      end
+      element_index += 1 
     end
-    binding.pry
-    element_index += 1 
+    outer_results << lowest_value
+    row_index += 1
   end
-  row_index += 1
-end
-results
+  outer_results
+  
 end
 
 
