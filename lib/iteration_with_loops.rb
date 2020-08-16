@@ -8,12 +8,11 @@ while row_index < src.count do
   while element_index < src[row_index].count do
     if src[row_index][element_index] < src[row_index][element_index]
       results << src[row_index][element_index]
-      binding.pry
     end
+    binding.pry
     element_index += 1 
   end
   row_index += 1
 end
 results
 end
-binding.pry
